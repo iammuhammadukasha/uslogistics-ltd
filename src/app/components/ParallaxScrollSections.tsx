@@ -39,7 +39,7 @@ export default function ParallaxScrollSections() {
           <motion.div className="cb-parallax-card cb-parallax-card--overlay" style={{ x: x2, zIndex: 2 }}>
             <div className="cb-parallax-card-inner cb-section-card">
               <div className="cb-container">
-                <h2 className="cb-section-title cb-section-title--jost">Why Choose Seller Stop?</h2>
+                <h2 className="cb-section-title cb-section-title--jost">Why Choose US Logistics Ltd.?</h2>
                 <p className="cb-section-subtitle">
                   We make selling your house simple, fast, and stress-free.
                 </p>
