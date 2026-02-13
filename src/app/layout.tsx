@@ -5,8 +5,8 @@ import './globals.css';
 const jost = Jost({ subsets: ['latin'], variable: '--font-jost' });
 
 export const metadata: Metadata = {
-  title: 'We Buy Houses for Cash | Fast Cash Offer',
-  description: 'Sell your house fast with a fair cash offer. No agents, no repairs, no waiting. Get an offer in 24 hours.',
+  title: 'US Logistics Ltd. – Dispatching & Trucking Solutions',
+  description: 'Dispatching, load procurement, and trucking support. We make trucking simple, stress-free, and profitable.',
   viewport: { width: 'device-width', initialScale: 1, maximumScale: 5 },
   icons: {
     icon: '/logo.png',
