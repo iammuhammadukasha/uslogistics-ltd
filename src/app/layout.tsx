@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: 'Dispatching, load procurement, and trucking support. We make trucking simple, stress-free, and profitable.',
   viewport: { width: 'device-width', initialScale: 1, maximumScale: 5 },
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
 };
 
