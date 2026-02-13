@@ -21,7 +21,7 @@ async function sendLeadNotification(params: {
   }
 
   const resend = new Resend(apiKey);
-  const from = (process.env.RESEND_FROM_EMAIL?.trim() || 'Seller Stop <onboarding@resend.dev>');
+  const from = (process.env.RESEND_FROM_EMAIL?.trim() || 'US Logistics Ltd. <onboarding@resend.dev>');
 
   const { data, error } = await resend.emails.send({
     from,

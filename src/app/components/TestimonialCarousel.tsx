@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     author: 'Maria L., Phoenix',
   },
   {
-    quote: 'I was relocating for work and needed to sell fast. Seller Stop made it hassle-free and transparent.',
+    quote: 'I was relocating for work and needed to sell fast. US Logistics Ltd. made it hassle-free and transparent.',
     author: 'James K., Dallas',
   },
   {
