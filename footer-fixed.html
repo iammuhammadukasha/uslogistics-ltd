@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: transparent;
+  }
+
+  footer {
+    background: #1a2236;
+    color: #fff;
+    padding: 56px 0 0;
+  }
+
+  .footer-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #2e3a50;
+  }
+
+  /* Column wrapper: heading + content share same left alignment */
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Brand column */
+  .brand-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .brand-logo span {
+    color: #f5a623;
+  }
+
+  .brand-tagline {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #8b96b0;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .brand-desc {
+    font-size: 13.5px;
+    color: #8b96b0;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #2e3a50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .social-icon:hover {
+    border-color: #f5a623;
+    background: rgba(245,166,35,0.08);
+  }
+
+  .social-icon svg {
+    width: 15px;
+    height: 15px;
+    fill: #8b96b0;
+    transition: fill 0.2s;
+  }
+
+  .social-icon:hover svg {
+    fill: #f5a623;
+  }
+
+  /* Column headings – 17px = 3px border + 14px padding so content aligns with lists */
+  .col-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid #f5a623;
+  }
+
+  /* Lists: same total left indent as heading text (3px + 14px = 17px) */
+  .quick-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 17px;
+  }
+
+  .quick-links li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #8b96b0;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .quick-links li a:hover {
+    color: #f5a623;
+  }
+
+  .quick-links li a svg {
+    width: 10px;
+    height: 10px;
+    fill: none;
+    stroke: #f5a623;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  .services-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 17px;
+  }
+
+  .services-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #8b96b0;
+  }
+
+  .services-list li svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #f5a623;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-left: 17px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(245,166,35,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: #f5a623;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8b96b0;
+    margin-bottom: 3px;
+  }
+
+  .contact-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .contact-value.large {
+    font-size: 18px;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    padding: 18px 0;
+  }
+
+  .footer-bottom-inner {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-copy {
+    font-size: 12.5px;
+    color: #8b96b0;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 12.5px;
+    color: #8b96b0;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: #f5a623;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .footer-inner, .footer-bottom-inner {
+      width: 92%;
+    }
+
+    .footer-bottom-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-col">
+        <div class="brand-logo">GOOD GUY<span>.</span></div>
+        <div class="brand-tagline">Pest Control &amp; Repairs</div>
+        <p class="brand-desc">Melbourne's specialized "Possum Removal Man Handyman." We don't just trap animals; we structurally repair your roof to ensure they never return.</p>
+        <div class="social-icons">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#1a2236"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#1a2236" stroke-width="2"/></svg>
+          </div>
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M21.35 11.1H12v2.8h5.35C16.8 16.1 14.6 17.4 12 17.4c-3.03 0-5.4-2.37-5.4-5.4s2.37-5.4 5.4-5.4c1.38 0 2.63.52 3.58 1.37l2.12-2.12A9.14 9.14 0 0 0 12 3 9 9 0 0 0 3 12a9 9 0 0 0 9 9c5.1 0 9-3.6 9-9 0-.6-.07-1.2-.18-1.8l-.47.9z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <div class="col-title">Quick Links</div>
+        <ul class="quick-links">
+          <li><a href="#">
+            <svg viewBox="0 0 24 24"><path d="M8 5l7 7-7 7"/></svg>
+            Home
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24"><path d="M8 5l7 7-7 7"/></svg>
+            About Us
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24"><path d="M8 5l7 7-7 7"/></svg>
+            Recent Projects
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24"><path d="M8 5l7 7-7 7"/></svg>
+            Reviews
+          </a></li>
+          <li><a href="#">
+            <svg viewBox="0 0 24 24"><path d="M8 5l7 7-7 7"/></svg>
+            Contact Us
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div class="footer-col">
+        <div class="col-title">Our Services</div>
+        <ul class="services-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Possum Removal
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Possum Proofing
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Rodent Control
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Dead Animal Removal
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Roof Repairs
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="footer-col">
+        <div class="col-title">Contact Us</div>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Emergency 24/7</div>
+              <div class="contact-value large">0478 661 110</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Email Us</div>
+              <div class="contact-value">info@goodguypest.com.au</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Service Area</div>
+              <div class="contact-value">Melbourne Metro &amp; Surrounds, VIC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div class="footer-copy">© 2024 Good Guy Pest Control. All rights reserved. ABN: 12 345 678 901</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
